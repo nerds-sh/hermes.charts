@@ -14,3 +14,9 @@ settings:
     value: Local
   - name: HERMES_API_DATABASE__CONNECTIONSTRING
     value: Server=mysql.hermes-local.svc.cluster.local;Port=3306;Database=hermes_local;User=root;Password=admin;Connection Timeout=5;default command timeout=1;
+  - name: HERMES_API_CORS__HOSTS__0
+    value: http://hermes.web.local
+  - name: HERMES_API_CORS__HOSTS__1
+    value: https://hermes.cam.local
+  - name: HERMES_API_CORS__HOSTS__2
+    value: https://localhost:3000
