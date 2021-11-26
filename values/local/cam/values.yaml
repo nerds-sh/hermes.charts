@@ -12,6 +12,6 @@ expose:
 settings:
   environment: Local
   backend:
-    url: http://hermes.api.local
+    graphUrl: http://hermes.api.local/graphql
   google:
     trackingId: UA-199841319-1
