@@ -2,11 +2,16 @@ requiredServices: []
 
 image:
   name: nerdscomputing/hermes.cam
-  tag: latest
+  tag: 2021.1.9
+
+expose:
+  enabled: true
+  dnses: 
+    - hermes.cam.local
 
 settings:
   environment: Local
   backend:
-    url: https://hermes.api.dev.k8s.nerds.sh
+    url: http://hermes.api.local
   google:
     trackingId: UA-199841319-1
