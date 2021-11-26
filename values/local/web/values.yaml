@@ -11,3 +11,21 @@ expose:
 
 settings:
   environment: Local
+  apiUrl: http://hermes.api.local/graphql
+
+  google:
+    clientId: 147813579094-8qbv6canv6167qlga4k9788dg0qmgokn.apps.googleusercontent.com
+    cookiePolicy: single_host_origin
+
+    map:
+      id: AIzaSyBZ5t__ofNKveXOiPmgwX809LR8o7P8BSo
+      latitude: 45.79
+      longitude: 24.13
+      zoom: 15
+
+  features:
+    login: false
+    livestream: false
+
+  sources:
+    - k9Ljm6DdzCI
