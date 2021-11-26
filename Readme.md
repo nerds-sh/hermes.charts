@@ -28,11 +28,10 @@ Stuff needed to be done to deploy the charts for the first time.
 - Enter into the root folder.
     - `cd hermes.charts`
 - Run the install script.
-    - `python3 install.py -e shared -c mysql`
-    - `python3 install.py -e dev -c api`
-    - `python3 install.py -e dev -c web`
-    - `python3 install.py -e staging -c api`
-    - `python3 install.py -e staging -c web`
+    - `python3 install.py -e local -c mysql`
+    - `python3 install.py -e local -c api`
+    - `python3 install.py -e local -c web`
+    - `python3 install.py -e local -c cam`
 
 ### Upgrade
 Stuff needed to be done to upgrade the already existent deployment.
@@ -42,11 +41,10 @@ Stuff needed to be done to upgrade the already existent deployment.
 - Enter into the root folder.
     - `cd hermes.charts`
 - Run the upgrade script.
-    - `python3 upgrade.py -e shared -c mysql`
-    - `python3 upgrade.py -e dev -c api`
-    - `python3 upgrade.py -e dev -c web`
-    - `python3 upgrade.py -e staging -c api`
-    - `python3 upgrade.py -e staging -c web`
+    - `python3 upgrade.py -e local -c mysql`
+    - `python3 upgrade.py -e local -c api`
+    - `python3 upgrade.py -e local -c web`
+    - `python3 upgrade.py -e local -c cam`
 
 ### Uninstall
 Stuff needed to be done to uninstall the already existent deployment.
@@ -56,8 +54,7 @@ Stuff needed to be done to uninstall the already existent deployment.
 - Enter into the root folder.
     - `cd hermes.charts`
 - Run the uninstall script.
-    - `python3 uninstall.py -e shared -c mysql`
-    - `python3 uninstall.py -e dev -c api`
-    - `python3 uninstall.py -e dev -c web`
-    - `python3 uninstall.py -e staging -c api`
-    - `python3 uninstall.py -e staging -c web`
+    - `python3 uninstall.py -e local -c mysql`
+    - `python3 uninstall.py -e local -c api`
+    - `python3 uninstall.py -e local -c web`
+    - `python3 uninstall.py -e local -c cam`
