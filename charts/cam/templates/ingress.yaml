@@ -1,0 +1,33 @@
+{{ if .Values.expose.enabled }}
+{{- range $dns := .Values.expose.dnses }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $dns }}
+{{ if $.Values.expose.https.enabled }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: {{ $.Values.expose.https.issuer | quote }}
+    kubernetes.io/tls-acme: "true"
+{{ end }}
+spec:
+{{ if $.Values.expose.https.enabled }}
+  tls:
+    - hosts:
+      - {{ $dns }} 
+      secretName: tls.{{ $dns }}
+{{ end }}
+  rules:
+    - host: {{ $dns }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Release.Name }}
+                port:
+                  number: 80
+---
+{{- end }}
+{{ end }}

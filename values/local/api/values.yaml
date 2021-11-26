@@ -1,0 +1,11 @@
+requiredServices: []
+
+image: 
+  name: nerdscomputing/hermes.api
+  tag: latest
+
+settings:
+  - name: HERMES_API_ENVIRONMENT
+    value: Local
+  - name: HERMES_API_DATABASE__CONNECTIONSTRING
+    value: Server=mysql.hermes-local.svc.cluster.local,3306;Database=hermes_local;User=root;Password=admin;

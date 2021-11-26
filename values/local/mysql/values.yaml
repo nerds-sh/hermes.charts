@@ -1,0 +1,7 @@
+image: 
+  name: mysql
+  tag: 8.0
+
+settings:
+  - name: MYSQL_ROOT_PASSWORD
+    value: admin

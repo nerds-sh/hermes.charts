@@ -1,0 +1,15 @@
+requiredServices: []
+
+image:
+  name: ~
+  tag: ~
+
+expose:
+  enabled: false
+  dnses: []
+
+  https: 
+    enabled: false
+    issuer: staging
+
+settings: []

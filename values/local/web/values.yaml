@@ -1,0 +1,8 @@
+requiredServices: []
+
+image:
+  name: nerdscomputing/hermes.web
+  tag: latest
+
+settings:
+  environment: Local

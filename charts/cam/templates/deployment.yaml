@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    application: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        application: {{ .Release.Name }}
+    spec:
+      initContainers:
+        {{- range $index, $value := .Values.requiredServices }}
+        - name: init-{{ $index }}
+          image: busybox:1.33
+          command: ['sh', '-c', 'if nc -z -v -w5 {{ $value.ip }} {{ $value.port }}; then exit 0; fi; exit 1;']
+        {{- end }}
+      containers:
+        - name: {{ .Release.Name }}
+          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /srv/hermes.cam/settings.json
+              subPath: settings.json
+              name: settings
+              readOnly: true
+          ports:
+            - containerPort: 80
+              name: cam
+      volumes:
+        - name: settings
+          configMap:
+            name: {{ .Release.Name }}-settings
+            items:
+              - key: settings.json
+                path: settings.json

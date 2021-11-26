@@ -1,0 +1,12 @@
+requiredServices: []
+
+image:
+  name: nerdscomputing/hermes.cam
+  tag: latest
+
+settings:
+  environment: Local
+  backend:
+    url: https://hermes.api.dev.k8s.nerds.sh
+  google:
+    trackingId: UA-199841319-1
