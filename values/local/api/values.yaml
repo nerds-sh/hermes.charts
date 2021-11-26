@@ -2,10 +2,15 @@ requiredServices: []
 
 image: 
   name: nerdscomputing/hermes.api
-  tag: latest
+  tag: 2021.9.0 
+
+expose:
+  enabled: true
+  dnses: 
+    - hermes.api.local
 
 settings:
   - name: HERMES_API_ENVIRONMENT
     value: Local
   - name: HERMES_API_DATABASE__CONNECTIONSTRING
-    value: Server=mysql.hermes-local.svc.cluster.local,3306;Database=hermes_local;User=root;Password=admin;
+    value: Server=mysql.hermes-local.svc.cluster.local;Port=3306;Database=hermes_local;User=root;Password=admin;Connection Timeout=5;default command timeout=1;
