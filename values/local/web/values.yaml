@@ -2,7 +2,12 @@ requiredServices: []
 
 image:
   name: nerdscomputing/hermes.web
-  tag: latest
+  tag: 2021.11.10
+
+expose:
+  enabled: true
+  dnses: 
+    - hermes.web.local
 
 settings:
   environment: Local
